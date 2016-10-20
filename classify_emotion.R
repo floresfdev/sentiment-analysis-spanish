@@ -1,7 +1,7 @@
 classify_emotion <- function(textColumns,
                              algorithm = "bayes",
                              prior = 1.0,
-                             verbose=FALSE, 
+                             verbose = FALSE, 
                              langClass = "es" ,
                              ...) {
 	matrix <- create_matrix(textColumns, ...)

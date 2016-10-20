@@ -35,14 +35,14 @@ create_matrix <- function(textColumns,
     trainingColumn <- apply(as.matrix(textColumns), 1, paste, collapse = " ")
     trainingColumn <- 
         sapply(as.vector(trainingColumn, mode = "character"),
-               iconv,to = "UTF8", sub = "byte")
+               iconv, to = "UTF8", sub = "byte")
 
 	corpus <- Corpus(VectorSource(trainingColumn),
 	                 readerControl = list(language = language))
 	matrix <- DocumentTermMatrix(corpus, control = control);
     
     if (removeSparseTerms > 0) {
-        matrix <- removeSparseTerms(matrix,removeSparseTerms)
+        matrix <- removeSparseTerms(matrix, removeSparseTerms)
     }
 	
 	gc()
